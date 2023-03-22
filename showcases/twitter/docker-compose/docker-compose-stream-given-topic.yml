@@ -1,9 +1,9 @@
 version: "3.8"
 services:
   zookeeper:
-    image: wurstmeister/zookeeper
+    image: uohmlops.azurecr.io/pathwayanalysis/zookeeper
   kafka:
-    image: wurstmeister/kafka
+    image: uohmlops.azurecr.io/pathwayanalysis/kafka
     ports:
       - "${KAFKA_PORT}:9092"
     depends_on:
@@ -27,7 +27,7 @@ services:
 
   postgres:
     container_name: postgres_container
-    image: postgres
+    image: uohmlops.azurecr.io/pathwayanalysis/postgres
     environment:
       POSTGRES_PORT: ${POSTGRES_PORT}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
